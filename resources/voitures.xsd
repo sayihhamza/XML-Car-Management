@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="voitures">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="voiture" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="model" type="xs:string" use="required" />
+                        <xs:attribute name="marque" type="xs:string" use="required" />
+                        <xs:attribute name="matricule" type="xs:ID" use="required" />
+                        <xs:attribute name="annee" type="xs:integer" use="required" />
+                        <xs:attribute name="automatique" type="xs:boolean" use="required" />
+                        <xs:attribute name="coleur" type="xs:string" use="required" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
