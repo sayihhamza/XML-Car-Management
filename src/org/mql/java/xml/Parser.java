@@ -28,51 +28,6 @@ public class Parser {
 		voitures = new HashSet<>();
 		initialize(documentPath);
 		voitures = fetchCars();
-		test();
-	}
-
-	public void test() {
-		System.out.println("BEFORE : ");
-		for (Voiture voiture : voitures) {
-			System.out.println(voiture);
-		}
-		Voiture voiture = new Voiture();
-		voiture.setModel("MERC");
-		voiture.setMarque("AMG");
-		voiture.setMatricule("CNKNKN535");
-		voiture.setColeur("RED");
-		voiture.setAnnee(2022);
-		voiture.setAutomatique(true);
-
-		addCar(voiture);
-		voitures = fetchCars();
-		System.out.println("_________________________________");
-		System.out.println("AFTER : ");
-		for (Voiture voitureTmp : voitures) {
-			System.out.println(voitureTmp);
-		}
-//		removeCar(voiture);
-//		voitures = fetchCars();
-//		System.out.println("_________________________________");
-//		System.out.println("AFTER DELETE : ");
-//		for (Voiture voitureTmp : voitures) {
-//			System.out.println(voitureTmp);
-//		}
-//		x
-		Voiture voitureD = new Voiture();
-		voitureD.setModel("MERC");
-		voitureD.setMarque("GLE");
-		voitureD.setMatricule("CNKNKN535");
-		voitureD.setColeur("WHITE");
-		voitureD.setAnnee(2023);
-		voitureD.setAutomatique(true);
-		modifyCar(voitureD);
-		voitures = fetchCars();
-		System.out.println("_________________________________");
-		System.out.println("AFTER MODIFY : ");
-		for (Voiture voitureTmp : voitures) {
-			System.out.println(voitureTmp);
-		}
 	}
 
 	public void initialize(String documentPath) {
@@ -133,17 +88,6 @@ public class Parser {
 		}
 	}
 	
-	public void removeCar(Voiture voiture) {
-		NodeList voitureList = document.getElementsByTagName("voiture");
-		for (int i = 0; i < voitureList.getLength(); i++) {
-			Node voitureNode = voitureList.item(i);
-			if (voitureNode.getAttributes().getNamedItem("matricule").getNodeValue().equals(voiture.getMatricule())) {
-				voitureNode.getParentNode().removeChild(voitureNode);
-			}
-		}
-		commitModification();
-	}
-	
 	public void modifyCar(Voiture voiture) {
 		NodeList nodeList = document.getElementsByTagName("voiture");
 		for (int temp = 0; temp < nodeList.getLength(); temp++) {
@@ -161,7 +105,18 @@ public class Parser {
 			}
 		}
 	}
-
+	
+	public void removeCar(Voiture voiture) {
+		NodeList voitureList = document.getElementsByTagName("voiture");
+		for (int i = 0; i < voitureList.getLength(); i++) {
+			Node voitureNode = voitureList.item(i);
+			if (voitureNode.getAttributes().getNamedItem("matricule").getNodeValue().equals(voiture.getMatricule())) {
+				voitureNode.getParentNode().removeChild(voitureNode);
+			}
+		}
+		commitModification();
+	}
+	
 	public boolean checkIfAlreadyExists(Voiture voiture) {
 		for (Voiture voitureTmp : voitures) {
 			if (voitureTmp.getMatricule().equals(voiture.getMatricule())) {
@@ -171,7 +126,4 @@ public class Parser {
 		return false;
 	}
 
-	public static void main(String[] args) {
-		new Parser("resources/voitures.xml");
-	}
 }
