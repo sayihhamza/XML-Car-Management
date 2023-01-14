@@ -22,6 +22,14 @@ public class Parser {
 	private Document document;
 	private Set<Voiture> voitures;
 
+	public Set<Voiture> getVoitures() {
+		return voitures;
+	}
+
+	public void setVoitures(Set<Voiture> voitures) {
+		this.voitures = voitures;
+	}
+
 	public Parser(String documentPath) {
 		documentBuilder = null;
 		document = null;
@@ -54,7 +62,6 @@ public class Parser {
 	}
 
 	public Set<Voiture> fetchCars() {
-		Set<Voiture> voitures = new HashSet<>();
 		NodeList nodeList = document.getElementsByTagName("voiture");
 		for (int temp = 0; temp < nodeList.getLength(); temp++) {
 			Node node = nodeList.item(temp);
@@ -65,8 +72,8 @@ public class Parser {
 				voiture.setMarque(element.getAttribute("marque"));
 				voiture.setMatricule(element.getAttribute("matricule"));
 				voiture.setColeur(element.getAttribute("coleur"));
-				voiture.setAnnee(Integer.parseInt(element.getAttribute("annee")));
-				voiture.setAutomatique(Boolean.parseBoolean(element.getAttribute("automatique")));
+				voiture.setAnnee(element.getAttribute("annee"));
+				voiture.setAutomatique(element.getAttribute("automatique"));
 				voitures.add(voiture);
 			}
 		}
@@ -81,8 +88,8 @@ public class Parser {
 			voitureElement.setAttribute("matricule", voiture.getMatricule());
 			voitureElement.setAttribute("marque", voiture.getMarque());
 			voitureElement.setAttribute("coleur", voiture.getColeur());
-			voitureElement.setAttribute("annee", Integer.toString(voiture.getAnnee()));
-			voitureElement.setAttribute("automatique", Boolean.toString(voiture.isAutomatique()));
+			voitureElement.setAttribute("annee", voiture.getAnnee());
+			voitureElement.setAttribute("automatique", voiture.isAutomatique());
 			racineElement.appendChild(voitureElement);
 			commitModification();
 		}
@@ -98,8 +105,8 @@ public class Parser {
 					element.setAttribute("model", voiture.getModel());
 					element.setAttribute("marque", voiture.getMarque());
 					element.setAttribute("coleur", voiture.getColeur());
-					element.setAttribute("annee", Integer.toString(voiture.getAnnee()));
-					element.setAttribute("automatique", Boolean.toString(voiture.isAutomatique()));
+					element.setAttribute("annee", voiture.getAnnee());
+					element.setAttribute("automatique", voiture.isAutomatique());
 					commitModification();		
 				}
 			}
@@ -115,6 +122,13 @@ public class Parser {
 			}
 		}
 		commitModification();
+	}
+	
+	public Voiture getCarByMatricule(String matricule) {
+		for (Voiture voiture : voitures) {
+			if(voiture.getMatricule().equals(matricule)) return voiture;
+		}
+		return null;
 	}
 	
 	public boolean checkIfAlreadyExists(Voiture voiture) {

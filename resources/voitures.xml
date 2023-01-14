@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<voitures xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="voitures.xsd">
-	<voiture annee="2014" automatique="true" coleur="Noir"
-		marque="Volkswagen" matricule="C15A95720" model="Tiguan" />
-	<voiture annee="1988" automatique="false" coleur="Gris"
-		marque="PEUGOT" matricule="C9547A49" model="PEUGOT405" />
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><voitures xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="voitures.xsd">
+
+	<voiture annee="2000" automatique="false" coleur="Gris" marque="Peugot435" matricule="B9547A49" model="Peugot4"/>
+
+
+
+
+
+
+
+	<voiture annee="2900" automatique="true" coleur="nfkndsknk" marque="ppifdsnkfn" matricule="psjdfpni" model="fnskndfkn"/>
 </voitures>

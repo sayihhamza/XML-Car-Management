@@ -2,9 +2,8 @@ package org.mql.java.models;
 
 public class Voiture {
 
-	private String model, marque, matricule, coleur;
-	private int annee;
-	private boolean isAutomatique;
+	private String model, marque, matricule, coleur,annee,isAutomatique;
+
 	public String getModel() {
 		return model;
 	}
@@ -29,16 +28,16 @@ public class Voiture {
 	public void setColeur(String coleur) {
 		this.coleur = coleur;
 	}
-	public int getAnnee() {
+	public String getAnnee() {
 		return annee;
 	}
-	public void setAnnee(int annee) {
+	public void setAnnee(String annee) {
 		this.annee = annee;
 	}
-	public boolean isAutomatique() {
+	public String isAutomatique() {
 		return isAutomatique;
 	}
-	public void setAutomatique(boolean isAutomatique) {
+	public void setAutomatique(String isAutomatique) {
 		this.isAutomatique = isAutomatique;
 	}
 	@Override
