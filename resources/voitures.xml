@@ -1,12 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><voitures xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="voitures.xsd">
-
-	<voiture annee="2000" automatique="false" coleur="Gris" marque="Peugot435" matricule="B9547A49" model="Peugot4"/>
-
-
-
-
-
-
-
-	<voiture annee="2900" automatique="true" coleur="nfkndsknk" marque="ppifdsnkfn" matricule="psjdfpni" model="fnskndfkn"/>
+	<voiture annee="2014" automatique="true" coleur="noir" marque="Volkswagen" matricule="A95720A15" model="noir"/>
+	<voiture annee="2014" automatique="false" coleur="Gris" marque="Peugot435" matricule="B9547A49" model="Peugot4"/>
+	<voiture annee="2019" automatique="false" coleur="noir" marque="BMW" matricule="F98765B" model="noir"/>
+	<voiture annee="2015" automatique="true" coleur="gris" marque="Chevrolet" matricule="G65432C" model="Camaro SS"/>
+	<voiture annee="2018" automatique="false" coleur="jaune" marque="Lamborghini" matricule="H43210L" model="Aventador SVJ"/>
+	<voiture annee="2016" automatique="true" coleur="rouge" marque="Ferrari" matricule="C12345F" model="488 GTB"/>
+	<voiture annee="2019" automatique="false" coleur="blanc" marque="Porsche" matricule="D67890P" model="911 Carrera S"/>
+	<voiture annee="2022" automatique="true" coleur="bleu" marque="Tesla" matricule="E54321T" model="Model S Plaid"/>
+	<voiture annee="2021" automatique="true" coleur="noir" marque="Mercedes-Benz" matricule="K3333M" model="AMG GT 63S"/>
+	<voiture annee="2014" automatique="true" coleur="noir" marque="Volkswagen" matricule="A957620A15" model="noir"/>
+	<voiture annee="2014" automatique="false" coleur="Gris" marque="Peugot435" matricule="B9547A449" model="Peugot4"/>
+	<voiture annee="2019" automatique="false" coleur="noir" marque="BMW" matricule="F985765B" model="noir"/>
+	<voiture annee="2015" automatique="true" coleur="gris" marque="Chevrolet" matricule="G654232C" model="Camaro SS"/>
+	<voiture annee="2018" automatique="false" coleur="jaune" marque="Lamborghini" matricule="H434210L" model="Aventador SVJ"/>
+	<voiture annee="2016" automatique="true" coleur="rouge" marque="Ferrari" matricule="C123435F" model="488 GTB"/>
+	<voiture annee="2019" automatique="false" coleur="blanc" marque="Porsche" matricule="D678930P" model="911 Carrera S"/>
+	<voiture annee="2022" automatique="true" coleur="bleu" marque="Tesla" matricule="E543213T" model="Model S Plaid"/>
+	<voiture annee="2021" automatique="true" coleur="noir" marque="Mercedes-Benz" matricule="K33333M" model="AMG GT 63S"/>
+	<voiture annee="2014" automatique="true" coleur="noir" marque="Volkswagen" matricule="A951720A15" model="noir"/>
+	<voiture annee="2014" automatique="false" coleur="Gris" marque="Peugot435" matricule="B95417A49" model="Peugot4"/>
+	<voiture annee="2019" automatique="false" coleur="noir" marque="BMW" matricule="F98765B1" model="noir"/>
+	<voiture annee="2015" automatique="true" coleur="gris" marque="Chevrolet" matricule="G651432C" model="Camaro SS"/>
+	<voiture annee="2018" automatique="false" coleur="jaune" marque="Lamborghini" matricule="H143210L" model="Aventador SVJ"/>
+	<voiture annee="2016" automatique="true" coleur="rouge" marque="Ferrari" matricule="C123415F" model="488 GTB"/>
+	<voiture annee="2019" automatique="false" coleur="blanc" marque="Porsche" matricule="D678190P" model="911 Carrera S"/>
+	<voiture annee="2022" automatique="true" coleur="bleu" marque="Tesla" matricule="E543211T" model="Model S Plaid"/>
+	<voiture annee="2021" automatique="true" coleur="noir" marque="Mercedes-Benz" matricule="K333333M" model="AMG GT 63S"/>
+	<voiture annee="2014" automatique="true" coleur="noir" marque="Volkswagen" matricule="A957520A15" model="noir"/>
+	<voiture annee="2014" automatique="false" coleur="Gris" marque="Peugot435" matricule="B95547A49" model="Peugot4"/>
+	<voiture annee="2019" automatique="false" coleur="noir" marque="BMW" matricule="F987655B" model="noir"/>
+	<voiture annee="2015" automatique="true" coleur="gris" marque="Chevrolet" matricule="G655432C" model="Camaro SS"/>
+	<voiture annee="2018" automatique="false" coleur="jaune" marque="Lamborghini" matricule="H543210L" model="Aventador SVJ"/>
+	<voiture annee="2016" automatique="true" coleur="rouge" marque="Ferrari" matricule="C123455F" model="488 GTB"/>
+	<voiture annee="2019" automatique="false" coleur="blanc" marque="Porsche" matricule="D678960P" model="911 Carrera S"/>
+	<voiture annee="2022" automatique="true" coleur="bleu" marque="Tesla" matricule="E543321T" model="Model S Plaid"/>
+	<voiture annee="2021" automatique="true" coleur="noir" marque="Mercedes-Benz" matricule="K33313M" model="AMG GT 63S"/>
+	
 </voitures>

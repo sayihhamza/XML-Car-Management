@@ -1,11 +1,14 @@
 package org.mql.java.ui;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -29,6 +32,7 @@ public class CarsView extends JFrame {
 	public CarsView() {
 		super("Cars View");
 		setSize(800, 600);
+		setLocationRelativeTo(null);  
 		setLayout(new BorderLayout());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		parser = new Parser("resources/voitures.xml");
@@ -43,6 +47,12 @@ public class CarsView extends JFrame {
 		};
 
 		table = new JTable(model);
+		
+		JComboBox<String> comboBox = new JComboBox<String>();
+        comboBox.addItem("false");
+        comboBox.addItem("true");
+        table.getColumn("Automatique").setCellEditor(new DefaultCellEditor(comboBox));
+		
 		Font headerFont = new Font("Arial", Font.BOLD, 14);
 		table.getTableHeader().setFont(headerFont);
 
@@ -72,14 +82,14 @@ public class CarsView extends JFrame {
 			model.addRow(new Object[] { car.getMatricule(), car.getMarque(), car.getModel(), car.getColeur(),
 					car.getAnnee(), car.isAutomatique() });
 		}
-		JButton addButton = new JButton("Add Car");
+		JButton addButton = new JButton("ADD NEW CAR");
 		addButton.addActionListener(e -> {
-			AddCarView form = new AddCarView(parser, model);
+			AddCarView form = new AddCarView(parser, model,this);
 			form.setModal(true);
 			form.setVisible(true);
 		});
 
-		JButton removeButton = new JButton("Remove selected row");
+		JButton removeButton = new JButton("REMOVE SELECTED CAR");
 		removeButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent ae) {
@@ -90,6 +100,9 @@ public class CarsView extends JFrame {
 			}
 		});
 
+	    addButton.setPreferredSize(new Dimension(40, 40));
+	    removeButton.setPreferredSize(new Dimension(40, 40));
+		
 		add(addButton, BorderLayout.NORTH);
 		add(removeButton, BorderLayout.SOUTH);
 		setVisible(true);
