@@ -32,7 +32,7 @@ public class CarsView extends JFrame {
 	public CarsView() {
 		super("Cars View");
 		setSize(800, 600);
-		setLocationRelativeTo(null);  
+		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		parser = new Parser("resources/voitures.xml");
@@ -47,12 +47,12 @@ public class CarsView extends JFrame {
 		};
 
 		table = new JTable(model);
-		
+
 		JComboBox<String> comboBox = new JComboBox<String>();
-        comboBox.addItem("false");
-        comboBox.addItem("true");
-        table.getColumn("Automatique").setCellEditor(new DefaultCellEditor(comboBox));
-		
+		comboBox.addItem("false");
+		comboBox.addItem("true");
+		table.getColumn("Automatique").setCellEditor(new DefaultCellEditor(comboBox));
+
 		Font headerFont = new Font("Arial", Font.BOLD, 14);
 		table.getTableHeader().setFont(headerFont);
 
@@ -62,17 +62,15 @@ public class CarsView extends JFrame {
 		select.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent e) {
 				int[] row = table.getSelectedRows();
-				int[] columns = table.getSelectedColumns();
 				for (int i = 0; i < row.length; i++) {
-					for (int j = 0; j < columns.length; j++) {
-						Voiture tmpVoiture = parser.getCarByMatricule((String) table.getValueAt(row[i], 0));
-						tmpVoiture.setMarque((String) table.getValueAt(row[i], 1));
-						tmpVoiture.setModel((String) table.getValueAt(row[i], 2));
-						tmpVoiture.setColeur((String) table.getValueAt(row[i], 3));
-						tmpVoiture.setAnnee((String) table.getValueAt(row[i], 4));
-						tmpVoiture.setAutomatique((String) table.getValueAt(row[i], 5));
-						parser.modifyCar(tmpVoiture);
-					}
+					Voiture tmpVoiture = parser.getCarByMatricule((String) table.getValueAt(row[i], 0));
+					tmpVoiture.setMarque((String) table.getValueAt(row[i], 1));
+					tmpVoiture.setModel((String) table.getValueAt(row[i], 2));
+					tmpVoiture.setColeur((String) table.getValueAt(row[i], 3));
+					tmpVoiture.setAnnee((String) table.getValueAt(row[i], 4));
+					tmpVoiture.setAutomatique((String) table.getValueAt(row[i], 5));
+					parser.modifyCar(tmpVoiture);
+
 				}
 			}
 		});
@@ -84,7 +82,7 @@ public class CarsView extends JFrame {
 		}
 		JButton addButton = new JButton("ADD NEW CAR");
 		addButton.addActionListener(e -> {
-			AddCarView form = new AddCarView(parser, model,this);
+			AddCarView form = new AddCarView(parser, model, this);
 			form.setModal(true);
 			form.setVisible(true);
 		});
@@ -100,9 +98,9 @@ public class CarsView extends JFrame {
 			}
 		});
 
-	    addButton.setPreferredSize(new Dimension(40, 40));
-	    removeButton.setPreferredSize(new Dimension(40, 40));
-		
+		addButton.setPreferredSize(new Dimension(40, 40));
+		removeButton.setPreferredSize(new Dimension(40, 40));
+
 		add(addButton, BorderLayout.NORTH);
 		add(removeButton, BorderLayout.SOUTH);
 		setVisible(true);
